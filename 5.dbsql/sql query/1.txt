@@ -1,0 +1,6 @@
+SELECT c.customerID, SUM(p.price) AS total_purchase_amount
+FROM customers AS c
+JOIN orders AS o ON c.customerID = o.customerID
+JOIN orderdetails AS d ON o.orderID = d.orderID
+JOIN products AS p ON d.productID = p.productID
+GROUP BY c.customerID;

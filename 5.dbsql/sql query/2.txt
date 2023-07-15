@@ -1,0 +1,5 @@
+SELECT p.productname, SUM(o.quantity) AS total_sales_quantity, SUM(o.quantity  p.price) AS total_sales_amount
+FROM products AS p
+JOIN orderdetails AS o ON p.productid = o.productid
+WHERE o.quantity = 2000
+GROUP BY p.productname;
